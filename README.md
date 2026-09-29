@@ -4,7 +4,6 @@ Sistema completo de alimentação automatizada para pets de porte médio, com
 controle e monitoramento remoto, dosagem em malha fechada e análise de padrões
 de consumo.
 
-[![Verificação](https://github.com/Caiodesiderio/alimentador-automatico-iot/actions/workflows/verificacao.yml/badge.svg)](https://github.com/Caiodesiderio/alimentador-automatico-iot/actions/workflows/verificacao.yml)
 
 **PIBIC SISPROJ 59635** — Universidade do Estado do Amazonas
 Engenharia de Controle e Automação
