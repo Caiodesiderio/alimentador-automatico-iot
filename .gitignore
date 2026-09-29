@@ -1,0 +1,31 @@
+# =====================================================================
+# Nada de credencial no repositório.
+# =====================================================================
+
+# Firmware — segredos de Wi-Fi, Supabase e do dispositivo
+firmware/*/secrets.h
+secrets.h
+
+# Front-end
+.env
+.env.local
+.env.*.local
+node_modules/
+dist/
+.output/
+.nitro/
+.vinxi/
+
+# Python (Etapa E)
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Chaves diversas
+*.key
+*.pem
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+{
+  "nome": "PetFeeder-Synthetic-FeedingLog",
+  "versao": "1.0",
+  "semente": 59635,
+  "periodo_inicio": "2026-07-01",
+  "periodo_fim": "2026-09-28",
+  "dias_cobertos": 90,
+  "registros_feeding_events": 277,
+  "registros_food_readings": 2700,
+  "dias_com_anomalia_injetada": 12,
+  "anomalias_por_tipo": {
+    "low": 5,
+    "skipped": 4,
+    "high": 3
+  },
+  "refeicoes_agendadas": 249,
+  "refeicoes_manuais": 28,
+  "racao_liberada_total_g": 32851.96,
+  "racao_consumida_total_g": 29814.95,
+  "consumo_medio_diario_g": 331.28,
+  "animais": 1,
+  "dispositivos": 1,
+  "origem": "self-produced synthetic",
+  "contem_dado_pessoal": false,
+  "contem_dado_de_animal_real": false,
+  "contem_dado_de_terceiros": false
+}

@@ -1,0 +1,36 @@
+{
+  "por_arquivo": {
+    "feeding_events_sintetico.csv": {
+      "linhas": 277,
+      "colunas": 11,
+      "celulas": 3047,
+      "palavras": 3058,
+      "bytes": 41992,
+      "caracteres": 41714
+    },
+    "food_readings_sintetico.csv": {
+      "linhas": 2700,
+      "colunas": 4,
+      "celulas": 10800,
+      "palavras": 10804,
+      "bytes": 141007,
+      "caracteres": 138306
+    },
+    "ground_truth_anomalias.csv": {
+      "linhas": 12,
+      "colunas": 2,
+      "celulas": 24,
+      "palavras": 26,
+      "bytes": 222,
+      "caracteres": 209
+    }
+  },
+  "total": {
+    "linhas": 2989,
+    "colunas": 17,
+    "celulas": 13871,
+    "palavras": 13888,
+    "bytes": 183221,
+    "caracteres": 180229
+  }
+}

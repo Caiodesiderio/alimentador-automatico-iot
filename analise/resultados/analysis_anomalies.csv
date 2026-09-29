@@ -1,0 +1,6 @@
+event_date,type,description,z_score,z_robusto,severity,consumido_g
+2026-07-10,Consumo abaixo da média,Consumo 65% abaixo da média diária do período,-3.76,-18.47,high,116.06
+2026-08-01,Consumo abaixo da média,Consumo 56% abaixo da média diária do período,-3.259,-16.13,high,144.78
+2026-08-22,Consumo abaixo da média,Consumo 64% abaixo da média diária do período,-3.724,-18.299,high,118.15
+2026-09-10,Consumo abaixo da média,Consumo 66% abaixo da média diária do período,-3.817,-18.731,high,112.85
+2026-09-25,Consumo abaixo da média,Consumo 60% abaixo da média diária do período,-3.472,-17.124,high,132.58

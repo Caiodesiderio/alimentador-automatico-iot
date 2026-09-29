@@ -1,0 +1,5 @@
+label,centro_minutos,start_time,end_time,avg_portion_grams,event_count,desvio_horario_min
+Manhã,420.4,06:34,07:28,119.89,90,9.5
+Tarde,751.8,12:14,13:07,100.15,90,10.4
+Tarde 2,952.3,15:29,16:42,40.07,7,27.0
+Noite,1139.9,18:37,19:23,141.87,90,10.0

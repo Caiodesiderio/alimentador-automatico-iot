@@ -1,0 +1,13 @@
+# Pipeline de análise — K-means e Z-score
+# Instale com:  pip install -r requirements.txt
+#
+# O gerador do dataset (gerar_dataset.py) NÃO depende de nada disto:
+# usa só a biblioteca padrão do Python, de propósito, para o conjunto
+# ser reprodutível independente de versão de biblioteca.
+
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+
+# Só é necessário para a opção --enviar-supabase
+requests>=2.31
