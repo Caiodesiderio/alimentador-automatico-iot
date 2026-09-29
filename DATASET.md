@@ -10,13 +10,12 @@ alimentador automático IoT para pets de porte médio.
 | **Natureza** | 100% sintético. Não contém medições de animal real. |
 | **Dados pessoais** | Nenhum. |
 | **Licença** | CC BY 4.0 |
-| **Projeto** |  SISPROJ 59635 — Universidade do Estado do Amazonas |
 | **Orientação** | Prof. Dr. Almir Kimura Júnior |
 | **Gerador** | [`analise/gerar_dataset.py`](analise/gerar_dataset.py) |
 
 ---
 
-## Resumo em 30 segundos
+## Resumo
 
 - **O que é:** 277 registros de refeições de um alimentador automático para pets,
   cobrindo 90 dias, mais 2.700 pesagens da tigela. Dados tabulares, em CSV.
