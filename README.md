@@ -134,9 +134,6 @@ O passo a passo completo, incluindo como subir o banco populado do zero, está e
 - O firmware não escreve direto em nenhuma tabela: toda escrita passa por função
   `SECURITY DEFINER` que exige o cabeçalho `X-Device-Token`.
 - A chave `service_role` do Supabase não aparece em nenhum arquivo do projeto.
-- **Pendência declarada:** ainda não há tela de autenticação, então a leitura
-  está liberada para quem tiver a chave pública. O caminho de correção está
-  escrito no fim de `supabase/migrations/0002_rls.sql`.
 
 ## Estado atual
 
