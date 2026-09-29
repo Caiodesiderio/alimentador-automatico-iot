@@ -99,8 +99,7 @@ de propósito: assim nenhuma atualização de biblioteca altera o resultado.
 > **Sobre "quantidade de palavras":** este não é um corpus de texto. É um
 > conjunto **tabular** de séries temporais numéricas, então contagem de palavras
 > não é uma métrica significativa aqui — o equivalente correto é número de
-> registros, de campos e de células. Ainda assim, se o formulário exigir um
-> número, a contagem literal de tokens está na tabela abaixo.
+> registros, de campos e de células. ---.
 
 | Arquivo | Registros | Campos | Células | Tokens | Caracteres | Tamanho |
 |---|---:|---:|---:|---:|---:|---:|
