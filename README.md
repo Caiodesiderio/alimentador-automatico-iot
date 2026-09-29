@@ -8,8 +8,6 @@ de consumo.
 Engenharia de Controle e Automação
 Orientação: Prof. Dr. Almir Kimura Júnior
 
-Publicado no **CONEDU**; apresentado como banner no **ENAEPE 2026**.
-
 ---
 
 ## O que o sistema faz
