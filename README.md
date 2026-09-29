@@ -4,6 +4,8 @@ Sistema completo de alimentação automatizada para pets de porte médio, com
 controle e monitoramento remoto, dosagem em malha fechada e análise de padrões
 de consumo.
 
+[![Verificação](https://github.com/Caiodesiderio/alimentador-automatico-iot/actions/workflows/verificacao.yml/badge.svg)](https://github.com/Caiodesiderio/alimentador-automatico-iot/actions/workflows/verificacao.yml)
+
 **PIBIC SISPROJ 59635** — Universidade do Estado do Amazonas
 Engenharia de Controle e Automação
 Orientação: Prof. Dr. Almir Kimura Júnior
@@ -53,6 +55,7 @@ quando o Wi-Fi volta de uma queda longa).
 │   ├── dados/
 │   └── resultados/
 └── docs/
+    ├── VERIFICACAO.md                  ← como conferir tudo isto sem falar comigo
     ├── roteiro-bancada.md              ← comece por aqui
     ├── etapa-A-backend.md
     ├── etapa-B-pinagem-e-firmware.md
@@ -113,6 +116,23 @@ algoritmos. Origem, números, metodologia e limitações estão em
 validação técnica"* enquanto for esse o caso, e o aviso é acionado pela coluna
 `source` do banco, não por texto fixo na tela: quando a coleta real substituir o
 conjunto, ele desaparece sozinho.
+
+## Verificação independente
+
+Todas as afirmações deste repositório são conferíveis por terceiros, sem acesso a
+nenhuma conta e sem falar com os autores: os dados são regeráveis a partir do
+script, os números da documentação saem do pipeline, e o banco é populado por
+migrations versionadas. A verificação roda sozinha a cada envio de código, na
+infraestrutura do GitHub — o log fica público na aba **Actions**.
+
+Para conferir na própria máquina:
+
+```bash
+cd analise && pip install -r requirements.txt && python verificar.py
+```
+
+O passo a passo completo, incluindo como subir o banco populado do zero, está em
+[`docs/VERIFICACAO.md`](docs/VERIFICACAO.md).
 
 ## Segurança
 
