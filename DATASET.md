@@ -10,7 +10,6 @@ alimentador automático IoT para pets de porte médio.
 | **Natureza** | 100% sintético. Não contém medições de animal real. |
 | **Dados pessoais** | Nenhum. |
 | **Licença** | CC BY 4.0 |
-| **Orientação** | Prof. Dr. Almir Kimura Júnior |
 | **Gerador** | [`analise/gerar_dataset.py`](analise/gerar_dataset.py) |
 
 ---
