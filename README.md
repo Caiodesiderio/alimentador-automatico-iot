@@ -25,14 +25,7 @@ Orientação: Prof. Dr. Almir Kimura Júnior
 
 ## Arquitetura
 
-```
-   celular  ──HTTPS──>  Supabase  <──HTTPS──  ESP32   (ela é que pergunta, de 3 em 3 s)
-      │                (PostgreSQL)              │
-      │                                          ├── HX711 + célula de carga (tigela)
-      │                                          └── ULN2003 + 28BYJ-48 (dosador)
-      │
-      └── HTTP na rede local ──>  ESP32-CAM      ← só o vídeo passa por aqui
-```
+![Arquitetura do Sistema](docs/arquitetura.png)
 
 A ESP32 fica atrás de NAT e não aceita conexão de entrada. Por isso o aplicativo
 não fala direto com ela: ele **insere um comando numa fila** no banco, e a placa

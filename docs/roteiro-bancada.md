@@ -252,7 +252,6 @@ values ('esp32-01', 'Teste', '14:35', 'daily', 40, true);
 
 - [ ] Reiniciar a ESP32 (ela recarrega os agendamentos a cada 5 min, ou no boot)
 - [ ] Esperar a hora chegar e ver o motor girar sozinho
-- [ ] **Teste que impressiona a banca:** desligue o Wi-Fi do roteador e repita. O agendamento executa mesmo assim, porque a ESP32 guarda tudo na memória e usa o relógio interno. Religue e veja o registro aparecer no banco.
 
 ## 4.8 Conferir o consumo (o dado que alimenta o Z-score)
 
@@ -319,19 +318,3 @@ A Etapa D é o que liga os dois. O que ela faz:
 - Realtime: peso e refeições aparecem na tela sozinhos, sem recarregar;
 - estados de erro e offline de verdade;
 - `.env` com `.env.example` versionado.
-
-## Sugestão de ordem: fazer D antes de C
-
-Combinamos A → F, mas acho que vale inverter as duas próximas, por três motivos:
-
-1. A Etapa C está **travada** — ainda preciso saber o modelo da sua ESP32-CAM e
-   se você tem adaptador USB-serial para gravá-la.
-2. A Etapa D não depende em nada da câmera. A aba Câmera já trata falha de stream
-   sozinha: sem a ESP32-CAM no ar, ela mostra "sem conexão com a câmera" e o
-   resto do app funciona normalmente.
-3. É o app que a banca vai olhar. Ter ele mexendo o hardware de verdade é o que
-   muda a demonstração de "protótipo de bancada" para "sistema integrado" — a
-   câmera é uma aba a mais.
-
-Se concordar, depois da Fase 4 seguimos para a Etapa D e deixamos a câmera para
-o final.

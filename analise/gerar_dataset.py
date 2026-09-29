@@ -6,9 +6,6 @@ Gerador do conjunto de dados SINTÉTICO do alimentador automático.
 PIBIC SISPROJ 59635 — UEA — Eng. de Controle e Automação
 Orientação: Prof. Dr. Almir Kimura Júnior
 
-=======================================================================
-POR QUE ESTE CONJUNTO É SINTÉTICO
-=======================================================================
 O protótipo ainda está em bancada e nenhum animal foi monitorado até
 agora. Os algoritmos de análise (K-means e Z-score), porém, precisavam
 ser validados antes de existir coleta real. Este script produz um
@@ -18,9 +15,6 @@ O conjunto NÃO representa medições de um animal real e não deve ser
 usado para nenhuma conclusão sobre comportamento animal. Essa limitação
 foi declarada formalmente aos avaliadores do artigo.
 
-=======================================================================
-POR QUE ELE É REPRODUTÍVEL
-=======================================================================
 1. A semente do gerador é fixa (SEMENTE).
 2. O período é fixo (DATA_INICIAL a DATA_FINAL), e não "os últimos 90
    dias" — do contrário o conjunto mudaria a cada execução e o número
@@ -34,7 +28,7 @@ Rodar duas vezes produz arquivos byte a byte idênticos.
 
 =======================================================================
 ANOMALIAS COM RÓTULO CONHECIDO
-=======================================================================
+
 As anomalias são injetadas em dias escolhidos de propósito, e o rótulo
 de cada uma é salvo à parte (ground_truth_anomalias.csv). Isso permite
 MEDIR o acerto do detector Z-score em vez de só olhar o gráfico e achar

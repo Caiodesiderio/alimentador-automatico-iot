@@ -1,32 +1,8 @@
-# Dataset Registration (SRBR) — respostas prontas para colar
-
-Formulário: **Dataset Registration → New Dataset**
+# Dataset Registration 
 Preparado em 29/09/2026, com os números saídos de `analise/dados/DATASET_INFO.json`.
 
-> **A resposta curta à pergunta "quais bancos de dados foram usados":**
-> nenhum de terceiros. Nem base pública, nem base comprada, nem dado raspado da
-> web. O conjunto foi produzido pelo próprio projeto, por script, e é
-> integralmente sintético. No formulário isso é **Self Produced Data**.
 
----
-
-## Submission Info
-
-| Campo | Valor |
-|---|---|
-| **Contributed By** | `SRBR` *(já preenchido)* |
-| **Sponsored By** | `SRBR` *(já preenchido)* |
-
-## General
-
-### Acquisition Route
-
-☑ **Self Produced Data** ← marcar esta
-☐ Open Data
-☐ Purchased Data
-
-### Dataset Name  *(limite 128)*
-
+### Dataset Name  *
 ```
 PetFeeder-Synthetic-FeedingLog
 ```
@@ -35,12 +11,6 @@ PetFeeder-Synthetic-FeedingLog
 
 Selecionar **Tabular** / **CSV** se existir na lista. Se as únicas opções forem
 as genéricas, deixar **Text** — os arquivos são CSV em UTF-8.
-
-### Version  *(limite 256)*
-
-```
-1.0
-```
 
 ### Dataset Tag
 
@@ -54,14 +24,14 @@ clustering
 esp32
 ```
 
-### Task / 기술 분류
+### Task 
 
 ```
 Clustering
 Anomaly Detection
 ```
 
-### Summary / 데이터셋 요약  *(limite 10.000)*
+### Summary / 
 
 ```
 Fully synthetic dataset of automatic pet feeder events, produced by this project
@@ -91,7 +61,7 @@ only the Python standard library. Running it twice produces byte-identical
 files.
 ```
 
-### Description / 데이터셋 설명  *(limite 10.000)*
+### Description / 
 
 ```
 CONTEXT
@@ -191,29 +161,21 @@ LICENSE
 CC BY 4.0.
 ```
 
-### Data URL / 데이터셋 웹 주소  *(obrigatório)*
+### Data URL / 
 
 ```
-https://github.com/<seu-usuario>/<seu-repositorio>/blob/main/DATASET.md
+https://github.com/Caiodesiderio/alimentador-automatico-iot.git
 ```
 
 ### URL Of Raw Data
 
 ```
-https://github.com/<seu-usuario>/<seu-repositorio>/tree/main/analise/dados
+https://github.com/Caiodesiderio/alimentador-automatico-iot/tree/main/analise/dados
 ```
-
-> Substitua `<seu-usuario>/<seu-repositorio>` depois de publicar. **Confira que
-> o repositório está público antes de enviar o formulário** — um link privado
-> aparece como erro 404 para quem revisar do outro lado, e a submissão volta.
-
 ---
 
-## Volume — inclusive "quantidade de palavras"
+## Volume — 
 
-Eles pediram contagem de palavras. **Este conjunto não é um corpus de texto**, é
-tabular e numérico, então palavra não é métrica significativa. A resposta honesta
-é dar as métricas equivalentes e, se o campo exigir um número, o token literal.
 
 | Arquivo | Registros | Campos | Células | Tokens | Caracteres | Tamanho |
 |---|---:|---:|---:|---:|---:|---:|
@@ -222,16 +184,8 @@ tabular e numérico, então palavra não é métrica significativa. A resposta h
 | `ground_truth_anomalias.csv` | 12 | 2 | 24 | 26 | 209 | 0,2 KB |
 | **Total** | **2.989** | — | **13.871** | **13.888** | **180.229** | **178,9 KB** |
 
-Frase pronta, se perguntarem direto:
 
-```
-This is a tabular numeric time-series dataset, not a text corpus, so word count
-is not a meaningful metric. Equivalent volume: 2,989 records across three CSV
-files, 13,871 cells, 180,229 characters, 178.9 KB. A generic word counter reads
-13,888 whitespace-separated tokens.
-```
-
-## Método de coleta — resposta curta
+## Método de coleta 
 
 ```
 No collection took place. The dataset was generated programmatically by a script
@@ -246,36 +200,6 @@ A descrição completa do processo gerador — distribuições, parâmetros e
 instrumentos — está na seção 2 do `DATASET.md`.
 
 ---
-
-## Se perguntarem mais (provável, e vale ter pronto)
-
-| Pergunta | Resposta |
-|---|---|
-| Foi usada alguma base pública (Kaggle, HuggingFace, UCI…)? | Não. |
-| Foi comprada alguma base? | Não. |
-| Houve raspagem de dados da web? | Não. |
-| Contém dados pessoais ou identificáveis? | Não. |
-| Contém dados de animais reais? | Não. Todo o conjunto é simulado. |
-| Há licença de terceiros a respeitar? | Não. O conjunto é autoproduzido; distribuído sob CC BY 4.0. |
-| Quem produziu? | A equipe do projeto, por script versionado no repositório. |
-| É reprodutível? | Sim. Semente fixa, período absoluto, ids determinísticos e nenhuma dependência externa. Duas execuções geram arquivos idênticos. |
-| Usa rede neural? | Não. K-means e Z-score, com scikit-learn. |
-| Qual o tamanho? | 277 eventos de alimentação e 2.700 leituras de peso, em 90 dias. |
-| Qual o método de coleta? | Não houve coleta: geração programática por script versionado. Sem sensor, sem anotador humano, sem fonte externa. |
-| Quantidade de palavras? | Não se aplica — é conjunto tabular, não corpus de texto. Equivalente: 2.989 registros, 13.871 células, 180.229 caracteres. Token literal: 13.888. |
-| Onde estão os dados? | No GitHub, em `analise/dados/`, junto com o script que os gera e o pipeline que os consome. |
-| Qual o idioma? | Rótulos em português (pt-BR); documentação do formulário em inglês. |
-| Qual o formato? | CSV, UTF-8, separador vírgula. Esquema idêntico ao da tabela PostgreSQL de produção. |
 | Vai ser substituído por dado real? | Sim, assim que a coleta em bancada começar. O campo `source` de cada registro distingue `synthetic` de `device`, e o app troca o aviso sozinho. |
 
 ---
-
-## Antes de clicar em OK
-
-- [ ] Repositório publicado e **público** no GitHub
-- [ ] `DATASET.md` na raiz do repositório
-- [ ] Pasta `analise/dados/` com os quatro arquivos
-- [ ] Os dois links do formulário abertos no navegador, conferindo que carregam
-- [ ] Nenhum arquivo `.env` ou `secrets.h` subiu junto — confira com
-      `git status` antes do commit, e com a busca do GitHub depois
-- [ ] Orientador avisado do que está sendo submetido

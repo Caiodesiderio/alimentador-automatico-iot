@@ -1,30 +1,6 @@
 # Como verificar este trabalho sem falar com os autores
 
-Este documento existe porque a pergunta é legítima: **como alguém confere que o
-banco está populado, que o conjunto tem o tamanho declarado e que os resultados
-são os que a documentação diz — sem acesso à conta de ninguém?**
-
-A resposta curta: **não se confere olhando; confere-se reproduzindo.** Nada aqui
-depende de acreditar no relato dos autores nem de ver a tela deles.
-
----
-
-## O que NÃO dá para verificar, e por que isso não é problema
-
-O banco de dados do projeto roda numa instância do Supabase que pertence à conta
-do aluno. **Ninguém de fora tem acesso a ela, e nem deveria** — dar credencial de
-banco a terceiros é uma prática ruim, mesmo para avaliação.
-
-Isso não atrapalha, porque aquela instância **não contém nada que seja exclusivo
-dela**. O que existe lá é o resultado de aplicar oito arquivos SQL versionados
-neste repositório, sobre um conjunto de dados também versionado. Qualquer pessoa
-reproduz o mesmo estado em minutos, na própria máquina.
-
-Em outras palavras: o banco não é a fonte da verdade. **O repositório é.**
-
----
-
-## Verificação 1 — automática, sem instalar nada (30 segundos)
+## Verificação 1 — automática, sem instalar nada 
 
 Este repositório roda a própria verificação na infraestrutura do GitHub a cada
 envio de código. Abra a aba **Actions** do repositório: o log é público e
@@ -44,7 +20,7 @@ verde é uma afirmação testada, não uma promessa.
 
 ---
 
-## Verificação 2 — na sua própria máquina (5 minutos)
+## Verificação 2 — na sua própria máquina 
 
 ```bash
 git clone https://github.com/Caiodesiderio/alimentador-automatico-iot.git
@@ -78,9 +54,7 @@ cat dados/DATASET_INFO.json                # estatísticas geradas pelo script
 
 ---
 
-## Verificação 3 — o banco populado, do zero (10 minutos)
-
-Esta é a resposta direta a "como vejo o banco cheio".
+## Verificação 3 — o banco populado, do zero 
 
 ### Com Docker
 
@@ -149,16 +123,3 @@ já traz de fábrica.
 | K-means, 90 dias | k = 4, silhueta 0,946 | `RESULTADO_ANALISE.json` |
 | Z-score clássico, \|z\| > 2 | 5 de 12 (revocação 0,42) | idem |
 | Z-score robusto (MAD), \|z\| > 3,5 | 12 de 12 (F1 0,92) | idem |
-
----
-
-## Uma observação sobre honestidade
-
-A linha mais importante desta tabela é a do **Z-score clássico: 5 de 12**. É um
-resultado ruim para a formulação original do método, e está publicado com o
-mesmo destaque que os bons.
-
-Ele foi mantido porque é o que dá sentido ao resto: foi essa falha, encontrada
-sobre dados sintéticos e antes de qualquer coleta real, que motivou adotar a
-variante robusta. Um conjunto de validação que só confirma o que se esperava não
-teria servido para nada.

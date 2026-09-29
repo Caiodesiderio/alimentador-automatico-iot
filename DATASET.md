@@ -10,7 +10,7 @@ alimentador automático IoT para pets de porte médio.
 | **Natureza** | 100% sintético. Não contém medições de animal real. |
 | **Dados pessoais** | Nenhum. |
 | **Licença** | CC BY 4.0 |
-| **Projeto** | PIBIC SISPROJ 59635 — Universidade do Estado do Amazonas |
+| **Projeto** |  SISPROJ 59635 — Universidade do Estado do Amazonas |
 | **Orientação** | Prof. Dr. Almir Kimura Júnior |
 | **Gerador** | [`analise/gerar_dataset.py`](analise/gerar_dataset.py) |
 
@@ -40,9 +40,7 @@ algoritmos de análise, porém, precisavam ser validados antes de existir coleta
 real. Este conjunto foi criado para essa validação técnica.
 
 Ele **não representa o comportamento de um animal real** e não sustenta nenhuma
-conclusão sobre nutrição ou comportamento animal. Essa limitação foi declarada
-formalmente aos avaliadores do artigo publicado no CONEDU e está repetida aqui
-por ser o ponto mais importante sobre estes dados.
+conclusão sobre nutrição ou comportamento animal. 
 
 O aplicativo do projeto também exibe o aviso *"Dados simulados — em validação
 técnica"* enquanto a origem dos dados for sintética, e o aviso é acionado por
@@ -329,13 +327,3 @@ Saída em `analise/resultados/`: `analysis_clusters.csv`,
 último com todos os números citados acima.
 
 ---
-
-## 10. Como citar
-
-> CHAVES, C. D. D. S.; KIMURA JÚNIOR, A. *PetFeeder-Synthetic-FeedingLog v1.0:
-> conjunto sintético de eventos de alimentação para validação de algoritmos de
-> agrupamento e detecção de anomalias em alimentador automático IoT*.
-> Universidade do Estado do Amazonas, PIBIC SISPROJ 59635, 2026.
-
-> **Confirme a autoria e a forma de citação com o seu orientador antes de
-> publicar. Esta entrada é um modelo.**

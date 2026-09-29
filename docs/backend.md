@@ -4,32 +4,9 @@ Alimentador automático IoT para pets de médio porte
 PIBIC SISPROJ 59635 · UEA · Eng. de Controle e Automação
 Orientação: Prof. Dr. Almir Kimura Júnior
 
----
+--
 
-## 1. Criar o projeto no Supabase
-
-1. Entre em `supabase.com`, crie a conta (o plano gratuito atende o projeto) e clique em **New project**.
-2. Preencha:
-   - **Name**: `alimentador-pet`
-   - **Database password**: gere uma senha forte e **guarde fora do repositório**. Ela não é usada pelo app nem pelo firmware, só para acesso direto ao banco.
-   - **Region**: `South America (São Paulo)` — é a de menor latência para Manaus. Latência importa no polling da ESP32.
-3. Espere o provisionamento (~2 min).
-
-### Onde pegar as chaves
-
-**Project Settings → API**:
-
-| Campo | Onde é usado | Pode ir para o Git? |
-|---|---|---|
-| **Project URL** (`https://xxxx.supabase.co`) | `.env` do app e `secrets.h` do firmware | não (fica no `.env.example` como placeholder) |
-| **anon public** | `.env` do app e `secrets.h` do firmware | **não** |
-| **service_role** | **nada neste projeto** | **nunca** |
-
-> A `service_role` não aparece em lugar nenhum deste projeto — nem no firmware, nem no script Python. É a chave mestra do banco e ela ignora RLS. Se algum dia for preciso, ela fica apenas em variável de ambiente de máquina.
-
----
-
-## 2. Aplicar as migrations
+## .Aplicar as migrations
 
 **SQL Editor → New query**, cole e rode **um arquivo por vez, nesta ordem**:
 
@@ -89,7 +66,7 @@ Como a célula de carga ficou **no comedouro**:
 | Quanto o pet comeu (`feeding_events.consumed_grams`) | queda do peso na tigela desde a liberação | **medido** |
 | Nível do reservatório (`devices.hopper_grams`) | capacidade − soma das porções desde o último reabastecimento | **estimado** |
 
-O nível do reservatório só volta ao valor certo quando o tutor registra o reabastecimento pelo app (`insert into hopper_refills`). Na tela de Início esse número precisa aparecer rotulado como **estimado** — é uma afirmação sobre o hardware que a banca pode cobrar.
+O nível do reservatório só volta ao valor certo quando o tutor registra o reabastecimento pelo app (`insert into hopper_refills`). Na tela de Início esse número precisa aparecer rotulado como **estimado** 
 
 ### Como o consumo é calculado
 
@@ -101,7 +78,7 @@ consumed_grams = bowl_grams_after (no momento da liberação) − bowl_grams (ag
 
 limitado entre 0 e a porção liberada. O evento é encerrado (`settled_at`) quando o pet consome ≥ 80 % da porção ou depois de 4 h — o que vier primeiro. Uma nova liberação também encerra o evento anterior.
 
-Consequência prática: **é o Z-score que fica com dado real**, porque ele opera sobre consumo. Essa é a parte forte do trabalho agora.
+Consequência prática: **é o Z-score que fica com dado real**, porque ele opera sobre consumo. 
 
 ---
 
@@ -152,38 +129,6 @@ A ESP32 está atrás de NAT: ninguém de fora abre conexão com ela. O app **ins
 Assinatura ativa em `devices`, `food_readings`, `feeding_events`, `commands` e `schedules`. O app usa isso na Etapa D para atualizar a tela sem ficar repetindo requisição.
 
 A ESP32 **não** usa Realtime: websocket em microcontrolador cai e trava com frequência. Ela faz polling, que é feio e funciona.
-
----
-
-## 6. Modelo de acesso — o que está bom e o que é pendência
-
-**Está resolvido:**
-
-- O firmware não escreve em nenhuma tabela diretamente. Toda escrita passa por função `SECURITY DEFINER` que exige o `X-Device-Token`. Quem tiver só a anon key não forja leitura de balança nem dá baixa em comando.
-- O `device_token` não é legível pelo app: o `SELECT` em `devices` é concedido coluna a coluna e o token ficou de fora. Por isso o app consulta `v_devices`.
-- O app só consegue enfileirar comandos dos tipos que fazem sentido a partir do celular.
-
-**Pendência declarada (não é descuido, é estado do projeto):**
-
-Não existe tela de login, então a **leitura** está liberada para qualquer portador da anon key — e a anon key é pública por natureza, vai embutida no bundle do app. Na prática: quem tiver a URL do projeto vê os dados do alimentador.
-
-Para bancada e apresentação, tudo bem. O caminho de correção está escrito no fim de `0002_rls.sql` (tabela `device_owners` + policies por `auth.uid()`), e é uma troca de policies, não uma reescrita. Vale citar isso como trabalho futuro no artigo em vez de deixar a banca descobrir.
-
----
-
-## 7. O que NÃO pode ir para o Git
-
-Adicione ao `.gitignore` antes do primeiro commit:
-
-```gitignore
-# credenciais
-.env
-.env.local
-firmware/*/secrets.h
-*.key
-```
-
-Versionado: `.env.example` e `secrets.example.h`, só com placeholders.
 
 ---
 
