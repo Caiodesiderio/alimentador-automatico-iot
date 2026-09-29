@@ -4,8 +4,6 @@ Sistema completo de alimentação automatizada para pets de porte médio, com
 controle e monitoramento remoto, dosagem em malha fechada e análise de padrões
 de consumo.
 
-
-** PAIC -  59635** — Universidade do Estado do Amazonas
 Engenharia de Controle e Automação
 Orientação: Prof. Dr. Almir Kimura Júnior
 
