@@ -4,9 +4,6 @@ Sistema completo de alimentação automatizada para pets de porte médio, com
 controle e monitoramento remoto, dosagem em malha fechada e análise de padrões
 de consumo.
 
-Engenharia de Controle e Automação
-Orientação: Prof. Dr. Almir Kimura Júnior
-
 ---
 
 ## O que o sistema faz
